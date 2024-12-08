@@ -72,7 +72,8 @@ func (Consumer c) Consume(topic string, labels) []byte {
 
 * Group Coordinator: Each consumer group has a designated group coordinator, typically the leader of one of the
   partitions in the topic. This coordinator is responsible for managing group membership and keeping track of which
-  consumers are subscribed to the topic within the group.
+  consumers are subscribed to the topic within the group. group coordinator resides on one of the Kafka brokers
+  within the cluster. 
 
 * Group Metadata: Every consumer in a group maintains a local copy of the group metadata. This metadata includes
   information about all members of the group, including their IDs, leader status, and assigned partitions.
