@@ -9,7 +9,7 @@ builds B tree structures(Disk-Based B-Trees) on disk, the leaf contains the ref(
 In-Memory B-Trees (Performance-Driven Scenarios), Certain database systems, primarily In-Memory Databases (IMDBs), keep
 the entire B-tree index in memory.
 
-# How B-Trees are stored in disk
+### How B-Trees are stored in disk
 
 Storage: B-tree indexes are stored on disk as hierarchical structures divided into disk pages (root, internal, and leaf nodes). Leaf nodes contain pointers to actual table rows, optimized for sequential storage to minimize disk seeks.
 
