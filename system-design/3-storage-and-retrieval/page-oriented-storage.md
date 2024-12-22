@@ -9,6 +9,16 @@ builds B tree structures(Disk-Based B-Trees) on disk, the leaf contains the ref(
 In-Memory B-Trees (Performance-Driven Scenarios), Certain database systems, primarily In-Memory Databases (IMDBs), keep
 the entire B-tree index in memory.
 
+# How B-Trees are stored in disk
+
+Storage: B-tree indexes are stored on disk as hierarchical structures divided into disk pages (root, internal, and leaf nodes). Leaf nodes contain pointers to actual table rows, optimized for sequential storage to minimize disk seeks.
+
+Query Execution: During a query, only relevant parts of the index are loaded into memory starting from the root node, following a hierarchical traversal to reach the leaf nodes, ensuring efficient access (O(log n) complexity).
+
+Handling Large Indexes: When indexes don't fit into memory, databases use techniques like caching (buffer pool), partial loading of nodes, prefetching, and compression to minimize disk I/O and optimize memory usage.
+
+Optimizations: Strategies like clustered indexes, covering indexes, rebalancing, and partitioning help reduce query time and memory requirements while managing large or frequently updated indexes efficiently.
+
 Log indexing
 
 ![log-indexing](./resources/log-indexing.jpg)
@@ -50,3 +60,5 @@ The B tree is in memory, if system crashes we need to rebuild the B tree. This c
 - Key could be stored as abbreviation to save spaces
 - Try to lay out the B-Tree, so that nearby keys could be stored nearby on disk
 - Add sibling pointers between different leaves page to improve lookup without jumping back to parent page
+
+
