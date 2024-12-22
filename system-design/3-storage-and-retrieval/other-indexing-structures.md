@@ -27,15 +27,15 @@ Storing all row data within the index is called `clustered index`.
 
 Questions: How to build index to support fuzzy queries. Like a misspelled word ?
 
-Trigram Index: Break words into trigrams (three-character sequences) and create an inverted index for efficient lookups. Queries involve matching trigrams and ranking results using similarity metrics like Jaccard or edit distance.
+`Trigram Index`: Break words into trigrams (three-character sequences) and create an inverted index for efficient lookups. Queries involve matching trigrams and ranking results using similarity metrics like Jaccard or edit distance.
 
-Edit Distance Index (BK-Trees): Use BK-trees to organize words based on edit distance. Nodes represent words, and edges represent their edit distance. Queries traverse nodes within a specified distance threshold.
+`Edit Distance Index (BK-Trees)`: Use BK-trees to organize words based on edit distance. Nodes represent words, and edges represent their edit distance. Queries traverse nodes within a specified distance threshold.
 
-Phonetic Indexing (Soundex/Double Metaphone): Encode words into phonetic representations based on their pronunciation. Create an inverted index on these codes to handle misspellings that sound similar.
+`Phonetic Indexing (Soundex/Double Metaphone)`: Encode words into phonetic representations based on their pronunciation. Create an inverted index on these codes to handle misspellings that sound similar.
 
-Full-Text Search with Fuzzy Matching: Tokenize text and build a full-text search index (e.g., inverted index). Use database-specific fuzzy query features (e.g., Elasticsearch) to find approximate matches.
+`Full-Text Search with Fuzzy Matching`: Tokenize text and build a full-text search index (e.g., inverted index). Use database-specific fuzzy query features (e.g., Elasticsearch) to find approximate matches.
 
-Approximate Nearest Neighbor Search (ANN): Represent words as vector embeddings using models like Word2Vec. Build an ANN index (e.g., FAISS) to find words with similar semantic meaning.
+`Approximate Nearest Neighbor Search (ANN)`: Represent words as vector embeddings using models like Word2Vec. Build an ANN index (e.g., FAISS) to find words with similar semantic meaning.
 
 ## Keep everything in memory
 
