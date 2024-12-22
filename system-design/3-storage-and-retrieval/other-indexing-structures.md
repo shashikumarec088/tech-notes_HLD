@@ -19,7 +19,7 @@ Storing all row data within the index is called `clustered index`.
 
 ## Multi-column indexes
 
-- `contatenated index`: combines several fields into one key.
+- `concatenated index`: combines several fields into one key.
 - `space-filling curve` could be used to B-Tree for multi-dimensional indexes. e.g search a restaurant in a two-dimensional
   range which standard B-Tree cannot answer it. If not using `space-filling curve`, we could use **R-trees**.
 
