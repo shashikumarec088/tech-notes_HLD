@@ -9,7 +9,9 @@ together, but store all the values from each column together instead. Bigtable m
 
 ![bitmap-encoding](./resources/bitmap-encoding.jpg)
 If distinct values from one column is small, we could have each bitmap for each value. In bitmap encoding, we create a separate bit array for each distinct value in the column where the array's length will be the number of rows and bit is set when column has the current value.
+
 To reduce the bit array length we use the `run-length` encoding.
+
 Delta encoding stores the difference (or "delta") between sequential values in a column instead of the full values. It is most effective for columns with sequential or closely related values, such as timestamps or numeric data.
 
 ### Queries
