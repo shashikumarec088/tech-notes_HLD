@@ -148,6 +148,7 @@ This repository explains how to use Redis **Sorted Sets** to implement a leaderb
 ZADD leaderboard 100 player1
 ZADD leaderboard 200 player2
 ZADD leaderboard 150 player3
+```
 
 ## References
 
