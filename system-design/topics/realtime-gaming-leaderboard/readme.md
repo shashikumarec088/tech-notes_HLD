@@ -149,6 +149,8 @@ ZADD leaderboard 100 player1
 ZADD leaderboard 200 player2
 ZADD leaderboard 150 player3
 ```
+## how time complexity is log n
+* Redis Sorted Sets achieve O(logN) time complexity for adding or updating elements using an efficient underlying data structure called a skip list combined with a hash table.
 
 ## References
 
