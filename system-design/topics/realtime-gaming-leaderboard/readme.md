@@ -111,6 +111,44 @@ When we have our data partitioned, we can build local indices or global indices.
 
 ## Scaling
 
+# Redis Leaderboard Design Using Sorted Sets
+
+This repository explains how to use Redis **Sorted Sets** to implement a leaderboard. Redis Sorted Sets allow you to store elements with scores, automatically sorting them by the score. This is ideal for ranking systems like leaderboards.
+
+---
+
+## Why Use Redis Sorted Sets?
+
+1. **Automatic Sorting**: Elements are sorted by their scores.
+2. **Efficient Operations**:
+   - **O(log N)** for adding or updating scores.
+   - **O(log N + M)** for range queries.
+3. **Support for Rankings**: Retrieve ranks, scores, or ranges efficiently.
+
+---
+
+## Commands Overview
+
+| **Command**       | **Description**                                                                 |
+|-------------------|---------------------------------------------------------------------------------|
+| `ZADD`           | Adds or updates a player's score.                                               |
+| `ZREVRANGE`      | Retrieves the top N players (highest scores first).                             |
+| `ZSCORE`         | Retrieves the score of a specific player.                                       |
+| `ZREVRANK`       | Retrieves the rank of a player in descending order.                             |
+| `ZINCRBY`        | Increments a player's score.                                                   |
+| `ZREM`           | Removes a player from the leaderboard.                                          |
+
+---
+
+## How It Works
+
+### Add or Update Player's Score
+
+```bash
+ZADD leaderboard 100 player1
+ZADD leaderboard 200 player2
+ZADD leaderboard 150 player3
+
 ## References
 
 * <https://medium.com/@mayilb77/design-a-real-time-leaderboard-system-for-millions-of-users-08b96b4b64ce>
